@@ -12,7 +12,7 @@ pipeline {
             }
         }
         
-        stage('SonarQube analysis') {
+        stage('Code analysis') {
             steps{
                 withSonarQubeEnv(credentialsId: 'sonar-token-1' , installationName: 'sonarqube.10.4') {
                 sh " mvn clean verify sonar:sonar -Dsonar.projectKey=firstProject -Dsonar.projectName='firstProject'"
